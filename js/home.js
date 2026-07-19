@@ -5,7 +5,9 @@ fetch("data/products.json")
 
     homeProducts.innerHTML = "";
 
-    Object.keys(products).forEach(productId => {
+    Object.keys(products)
+  .slice(0, 4)
+  .forEach(productId => {
       const product = products[productId];
 
       const image =
