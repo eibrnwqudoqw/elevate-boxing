@@ -34,7 +34,21 @@ fetch("data/products.json")
       `;
     });
 
-    window.allProducts = products;
+        window.allProducts = products;
+  })
+  .catch(error => {
+    console.error("Could not load products:", error);
+
+    const homeProducts = document.getElementById("homeProducts");
+
+    if (homeProducts) {
+      homeProducts.innerHTML = `
+        <p style="text-align:center;padding:40px;">
+          Products could not be loaded.<br>
+          Please refresh the page.
+        </p>
+      `;
+    }
   });
 
 function quickAddToCart(productId) {
