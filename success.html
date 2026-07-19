@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Confirmed | Elevate Boxing</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+
+<header>
+  <h1>ELEVATE <span>BOXING</span></h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="training.html">Training</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html" class="cart-link">
+      🛒
+      <span id="cartCount">0</span>
+    </a>
+  </nav>
+</header>
+
+<main class="success-page">
+
+  <section class="success-card">
+    <div class="success-icon">✓</div>
+
+    <p class="success-label">Payment Successful</p>
+
+    <h1>Order Confirmed</h1>
+
+    <p class="success-message">
+      Thank you for your order. Your payment has been processed securely through Stripe.
+      We’ll prepare your order and contact you if any further information is needed.
+    </p>
+
+    <div class="success-actions">
+      <a href="shop.html" class="btn">Continue Shopping</a>
+      <a href="index.html" class="btn-outline">Return Home</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <h2>ELEVATE<span>BOXING</span></h2>
+    <p>Premium boxing equipment built to help fighters improve every day.</p>
+  </div>
+
+  <div class="footer-links">
+    <h3>Shop</h3>
+    <a href="shop.html">Gloves</a>
+    <a href="shop.html">Headgear</a>
+    <a href="shop.html">Footwear</a>
+    <a href="shop.html">Accessories</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Customer Care</h3>
+    <a href="contact.html">Contact Us</a>
+    <a href="shipping.html">Shipping Information</a>
+	<a href="returns.html">Returns & Refunds</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Company</h3>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Secure Payment</h3>
+    <p>Powered by Stripe</p>
+	<img src="images/stripelogo.png" alt="Stripe" width="100">
+  </div>
+</footer>
+
+
+<script src="js/cart-counter.js"></script>
+
+
+<script>
+  localStorage.removeItem("cart");
+
+  if (typeof updateCartCount === "function") {
+    updateCartCount();
+  }
+</script>
+
+
+
+</body>
+</html>

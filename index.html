@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boxing Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<header>
+  <h1>ELEVATE <span>BOXING</span></h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+	<a href="training.html">Training</a>
+	<a href="contact.html">Contact</a>
+	<a href="cart.html" class="cart-link">
+		<svg xmlns="http://www.w3.org/2000/svg"
+			 width="28"
+			 height="28"
+			 viewBox="0 0 24 24"
+			 fill="none"
+			 stroke="currentColor"
+			 stroke-width="2"
+			 stroke-linecap="round"
+			 stroke-linejoin="round">
+
+			<circle cx="9" cy="21" r="1"></circle>
+			<circle cx="20" cy="21" r="1"></circle>
+
+			<path d="M1 1h4l2.68 13.39a2 2 0 0 0
+			2 1.61h9.72a2 2 0 0 0
+			2-1.61L23 6H6"></path>
+		</svg>
+
+		<span id="cartCount">0</span>
+	</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+
+    <div class="hero-content">
+
+        <h2>
+            TRAIN HARD.<br>
+            FIGHT SMART.<br>
+            <span>GEAR BUILT<br>TO LAST.</span>
+        </h2>
+
+        <p>
+            Premium boxing equipment trusted by
+            fighters of all levels.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="shop.html" class="btn">
+                Shop Equipment
+            </a>
+
+            <a href="training.html" class="btn-outline">
+                Explore Training
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="images/boxer.jpg" alt="Boxer">
+    </div>
+
+</section>
+
+
+
+  <section class="best-sellers">
+    <div class="section-header">
+      <h2>Best Sellers</h2>
+      <a href="shop.html">View All →</a>
+    </div>
+
+    <div class="category-grid" id="homeProducts"></div>
+  </section>
+
+  <section class="promo-banner">
+    <div class="promo-content">
+      <p>Featured Product</p>
+      <h2>Aqua Bag</h2>
+      <span>Engineered for speed</span>
+      <span>Designed to last</span>
+      <a href="shop.html" class="btn">Shop Now →</a>
+    </div>
+  </section>
+  
+  
+  <section class="trust-bar">
+
+    <div class="trust-item">
+        <img src="images/premium-quality.png" alt="Premium Quality" class="trust-icon">
+
+        <div>
+            <h3>Premium Quality</h3>
+            <p>Tested gear built to perform and last.</p>
+        </div>
+    </div>
+
+    <div class="trust-item">
+        <img src="images/built-by-fighters.png" alt="Built By Fighters" class="trust-icon">
+
+        <div>
+            <h3>Built By Fighters</h3>
+            <p>Designed by fighters for fighters of all levels.</p>
+        </div>
+    </div>
+
+    <div class="trust-item">
+        <img src="images/beginner-friendly.png" alt="Beginner Friendly" class="trust-icon">
+
+        <div>
+            <h3>Beginner Friendly</h3>
+            <p>Gear and guidance for every step of your journey.</p>
+        </div>
+    </div>
+
+    <div class="trust-item">
+		<img src="images/shipping.png" alt="Australia Wide Shipping"class="trust-icon">
+
+	<div>
+		<h3>Fast Australia-Wide Shipping</h3>
+		<p>Orders packed quickly and shipped across Australia.</p>
+	</div>
+    </div>
+
+</section>
+
+<section class="home-training-banner">
+
+    <div class="home-training-content">
+
+        <p>ONLINE BOXING COACHING</p>
+
+        <h2>TRAIN ANYWHERE</h2>
+
+        <span>
+            Take your boxing to the next level with personalised
+            online coaching, beginner programs and structured
+            boxing training.
+        </span>
+
+        <a href="training.html" class="btn">
+            Learn More →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <h2>ELEVATE<span>BOXING</span></h2>
+    <p>Premium boxing gear for champions. Built to perform. Made to last.</p>
+  </div>
+
+  <div class="footer-links">
+    <h3>Shop</h3>
+    <a href="shop.html">Gloves</a>
+    <a href="shop.html">HeadGear</a>
+    <a href="shop.html">Footwear</a>
+    <a href="shop.html">Accessories</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Customer Care</h3>
+    <a href="contact.html">Contact Us</a>
+    <a href="shipping.html">Shipping Information</a>
+	<a href="returns.html">Returns & Refunds</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Company</h3>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Secure Payment</h3>
+    <p>Powered by Stripe</p>
+	<img src="images/stripelogo.png" alt="Stripe" width="100">
+  </div>
+</footer>
+
+
+<script src="js/cart-counter.js"></script>
+<script src="js/home.js"></script>
+
+
+
+<div id="cartToast" class="cart-toast">
+  <div class="toast-icon">✓</div>
+
+  <div class="toast-content">
+    <strong>Added to Cart</strong>
+    <p>Your item has been added successfully.</p>
+  </div>
+
+  <a href="cart.html">View Cart</a>
+</div>
+
+
+</body>
+</html>

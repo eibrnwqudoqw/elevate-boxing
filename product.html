@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product | Elevate Boxing</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+
+<header>
+  <h1>ELEVATE <span>BOXING</span></h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="training.html">Training</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="cart-link">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           width="28"
+           height="28"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="2"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0
+        2 1.61h9.72a2 2 0 0 0
+        2-1.61L23 6H6"></path>
+      </svg>
+
+      <span id="cartCount">0</span>
+    </a>
+  </nav>
+</header>
+
+<main class="product-wrapper">
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> ›
+    <a href="shop.html">Shop</a> ›
+    <span id="productTitleCrumb">Product</span>
+  </div>
+
+  <section class="product-main">
+
+    <div class="thumbs" id="productThumbs"></div>
+
+    <div class="product-image-box">
+      <img id="productImage" src="images/gloves.png" alt="Product image">
+    </div>
+
+    <div class="product-info-box">
+
+      <span class="badge">ELEVATE PICK</span>
+
+      <h1 id="productTitle">Loading Product...</h1>
+
+      <p class="price" id="productPrice">$0.00</p>
+
+      <p class="product-description">
+        Premium boxing equipment built for training, performance and durability.
+      </p>
+
+      <ul class="features" id="productDescription"></ul>
+
+      <hr>
+
+
+
+      <div class="size-options" id="sizeOptions"></div>
+
+      <div class="cart-row">
+        <div class="quantity">
+          <button id="decreaseQty">-</button>
+          <span id="quantityValue">1</span>
+          <button id="increaseQty">+</button>
+        </div>
+
+        <a href="#" class="btn" id="addToCartBtn">Add To Cart</a>
+      </div>
+
+      <a href="#" class="buy-now" id="buyNowBtn">Buy It Now</a>
+
+    </div>
+
+  </section>
+
+  <section class="product-extra-info">
+
+    <div class="info-card">
+      <h2>Description</h2>
+      <ul id="descriptionCopy"></ul>
+    </div>
+
+    <div class="info-card">
+      <h2>Shipping & Returns</h2>
+
+      <p><strong>Shipping</strong></p>
+      <p>FREE Australia-wide shipping on every order.</p>
+      <p>Standard shipping usually takes 3–7 business days.</p>
+
+      <hr>
+
+      <p><strong>Returns</strong></p>
+      <p>Returns accepted within 30 days if unused and in original packaging.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <h2>ELEVATE<span>BOXING</span></h2>
+    <p>Premium boxing equipment built to help fighters improve every day.</p>
+  </div>
+
+  <div class="footer-links">
+    <h3>Shop</h3>
+    <a href="shop.html">Gloves</a>
+    <a href="shop.html">Headgear</a>
+    <a href="shop.html">Footwear</a>
+    <a href="shop.html">Accessories</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Customer Care</h3>
+    <a href="contact.html">Contact Us</a>
+    <a href="#">Free Shipping</a>
+    <a href="#">Returns</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Company</h3>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Secure Payment</h3>
+    <p>Powered by Stripe</p>
+	<img src="images/stripelogo.png" alt="Stripe" width="100">
+  </div>
+</footer>
+
+<script>
+let currentProduct = null;
+let currentProductId = null;
+let selectedQuantity = 1;
+let selectedSize = null;
+let selectedImage = "images/gloves.png";
+
+const productImage = document.getElementById("productImage");
+const productThumbs = document.getElementById("productThumbs");
+const quantityValue = document.getElementById("quantityValue");
+const sizeOptions = document.getElementById("sizeOptions");
+
+fetch("data/products.json")
+  .then(response => response.json())
+  .then(products => {
+    const params = new URLSearchParams(window.location.search);
+    currentProductId = params.get("id") || Object.keys(products)[0];
+    currentProduct = products[currentProductId];
+
+    if (!currentProduct) {
+      document.getElementById("productTitle").textContent = "Product Not Found";
+      return;
+    }
+
+    document.getElementById("productTitle").textContent = currentProduct.title;
+    document.getElementById("productTitleCrumb").textContent = currentProduct.title;
+    document.getElementById("productPrice").textContent = currentProduct.price;
+
+    const images = [];
+
+for (let i = 1; i <= 10; i++) {
+    images.push(`images/${currentProductId}/${i}.png`);
+}
+
+productThumbs.innerHTML = "";
+
+selectedImage = images[0];
+productImage.src = selectedImage;
+
+images.forEach(image => {
+    const thumb = document.createElement("img");
+
+    thumb.src = image;
+
+    thumb.onerror = () => thumb.remove();
+
+    thumb.onclick = () => {
+        selectedImage = image;
+        productImage.src = image;
+    };
+
+    productThumbs.appendChild(thumb);
+});
+
+    const descriptionList = document.getElementById("productDescription");
+    const descriptionCopy = document.getElementById("descriptionCopy");
+
+    descriptionList.innerHTML = "";
+    descriptionCopy.innerHTML = "";
+
+    if (currentProduct.description && currentProduct.description.length > 0) {
+      currentProduct.description.forEach(item => {
+        const liOne = document.createElement("li");
+        liOne.textContent = item;
+        descriptionList.appendChild(liOne);
+
+        const liTwo = document.createElement("li");
+        liTwo.textContent = item;
+        descriptionCopy.appendChild(liTwo);
+      });
+    }
+
+    sizeOptions.innerHTML = "";
+
+    if (currentProduct.sizes && currentProduct.sizes.length > 0) {
+      currentProduct.sizes.forEach((size, index) => {
+        const button = document.createElement("button");
+        button.textContent = size;
+
+        if (index === 0) {
+          button.classList.add("active");
+          selectedSize = size;
+        }
+
+        button.addEventListener("click", () => {
+          document.querySelectorAll("#sizeOptions button").forEach(btn => {
+            btn.classList.remove("active");
+          });
+
+          button.classList.add("active");
+          selectedSize = size;
+        });
+
+        sizeOptions.appendChild(button);
+      });
+    }
+  });
+
+document.getElementById("increaseQty").addEventListener("click", () => {
+  selectedQuantity++;
+  quantityValue.textContent = selectedQuantity;
+});
+
+document.getElementById("decreaseQty").addEventListener("click", () => {
+  if (selectedQuantity > 1) {
+    selectedQuantity--;
+    quantityValue.textContent = selectedQuantity;
+  }
+});
+
+function addProductToCart(goToCheckout = false) {
+  if (!currentProduct) {
+    alert("Product is still loading.");
+    return;
+  }
+  
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const cartId = selectedSize
+    ? `${currentProductId}-${selectedSize}`
+    : currentProductId;
+
+  const existingItem = cart.find(item => item.id === cartId);
+
+  if (existingItem) {
+    existingItem.quantity += selectedQuantity;
+  } else {
+    cart.push({
+      id: cartId,
+      productId: currentProductId,
+      title: selectedSize
+        ? `${currentProduct.title} - ${selectedSize}`
+        : currentProduct.title,
+      price: currentProduct.price,
+      image: selectedImage,
+      quantity: selectedQuantity
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  
+  if (goToCheckout) {
+  window.location.href = "checkout.html";
+  return;
+	}
+
+	updateCartCount();
+
+	const toast = document.getElementById("cartToast");
+
+	toast.classList.add("show");
+
+	setTimeout(() => {
+		toast.classList.remove("show");
+	}, 3000);
+}
+
+document.getElementById("addToCartBtn").addEventListener("click", function(e) {
+  e.preventDefault();
+  addProductToCart(false);
+});
+document.getElementById("buyNowBtn").addEventListener("click", function(e) {
+  e.preventDefault();
+  addProductToCart(true);
+});
+</script>
+
+<script src="js/cart-counter.js"></script>
+
+
+<div id="cartToast" class="cart-toast">
+    <div class="toast-icon">✓</div>
+
+    <div class="toast-content">
+        <strong>Added to Cart</strong>
+        <p>Your item has been added successfully.</p>
+    </div>
+
+    <a href="cart.html">View Cart</a>
+</div>
+</body>
+
+
+
+</html>

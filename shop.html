@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | ElevateBoxing</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+
+
+<body>
+
+<header>
+  <h1>ELEVATE <span>BOXING</span></h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+	<a href="training.html">Training</a>
+	<a href="contact.html">Contact</a>
+    <a href="cart.html" class="cart-link">
+		<svg xmlns="http://www.w3.org/2000/svg"
+			 width="28"
+			 height="28"
+			 viewBox="0 0 24 24"
+			 fill="none"
+			 stroke="currentColor"
+			 stroke-width="2"
+			 stroke-linecap="round"
+			 stroke-linejoin="round">
+
+			<circle cx="9" cy="21" r="1"></circle>
+			<circle cx="20" cy="21" r="1"></circle>
+
+			<path d="M1 1h4l2.68 13.39a2 2 0 0 0
+			2 1.61h9.72a2 2 0 0 0
+			2-1.61L23 6H6"></path>
+		</svg>
+
+		<span id="cartCount">0</span>
+	</a>
+  </nav>
+</header>
+
+<section class="shop-banner">
+
+    <div class="shop-banner-content">
+
+        <h1>SHOP</h1>
+
+        <div class="shop-breadcrumb">
+            <a href="index.html">Home</a>
+            <span>></span>
+            <span>Shop</span>
+        </div>
+
+    </div>
+
+</section>
+
+<main>
+
+	<section class="shop-page">
+		
+		<aside class="filters">
+			<h3>Categories</h3>
+			
+			<label>
+				<input type="checkbox" class="category-filter" value="Gloves">
+				Gloves
+			</label>
+
+			<label>
+				<input type="checkbox" class="category-filter" value="Pads">
+				Pads
+			</label>
+
+			<label>
+				<input type="checkbox" class="category-filter" value="Bags">
+				Bags
+			</label>
+
+			<label>
+				<input type="checkbox" class="category-filter" value="Accessories">
+				Accessories
+			</label>
+			
+			
+			<hr>
+
+			<h3>Colour</h3>
+
+			<label>
+				<input type="checkbox" class="color-filter" value="Black">
+				Black
+			</label>
+
+			<label>
+				<input type="checkbox" class="color-filter" value="White">
+				White
+			</label>
+
+			<label>
+				<input type="checkbox" class="color-filter" value="Orange">
+				Orange
+			</label>
+
+			<hr>
+
+
+			<h3>Price Range</h3>
+
+			<div class="price-filter">
+			  <input type="range" id="priceRange" min="0" max="500" value="500">
+			  <div class="price-values">
+				<span>$0</span>
+				<span id="priceValue">$500</span>
+			  </div>
+			</div>
+
+			<h3>Size</h3>
+
+			<label>
+				<input type="checkbox" class="size-filter" value="S">
+				Small
+			</label>
+
+			<label>
+				<input type="checkbox" class="size-filter" value="M">
+				Medium
+			</label>
+
+			<label>
+				<input type="checkbox" class="size-filter" value="L">
+				Large
+			</label>
+
+			<label>
+				<input type="checkbox" class="size-filter" value="XL">
+				XL
+			</label>
+
+			<label>
+				<input type="checkbox" class="size-filter" value="16oz">
+				16oz Gloves
+			</label>
+			
+			
+			<button id="clearFiltersBtn" class="clear-filters-btn">
+			  CLEAR FILTERS
+			</button>
+			
+		</aside>
+
+		<section class="shop-content">	
+			<div class="shop-top">
+			
+				<p>Showing 1-12 of 48 products</p>
+				
+				<select>
+					<option>Featured</option>
+					<option>Newest</option>
+					<option>Price ↑</option>
+					<option>Price ↓</option>
+				</select>
+			</div>
+			
+			<div class="shop-grid" id="shopGrid"></div>
+		</section>
+	</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <h2>ELEVATE<span>BOXING</span></h2>
+    <p>Premium boxing gear for champions. Built to perform. Made to last.</p>
+  </div>
+
+  <div class="footer-links">
+    <h3>Shop</h3>
+    <a href="shop.html">Gloves</a>
+    <a href="shop.html">HeadGear</a>
+    <a href="shop.html">Footwear</a>
+    <a href="shop.html">Accessories</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Customer Care</h3>
+    <a href="contact.html">Contact Us</a>
+    <a href="#">Shipping Info</a>
+    <a href="#">Returns</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Company</h3>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Secure Payment</h3>
+    <p>Powered by Stripe</p>
+	<img src="images/stripelogo.png" alt="Stripe" width="100">
+  </div>
+</footer>
+
+
+<script src="js/shop.js"></script>
+<script src="js/cart-counter.js"></script>
+
+</body>
+</html>

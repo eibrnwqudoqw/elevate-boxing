@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Elevate Boxing</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+
+<header>
+  <h1>ELEVATE <span>BOXING</span></h1>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="training.html">Training</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="cart-link">
+      🛒
+      <span id="cartCount">0</span>
+    </a>
+  </nav>
+</header>
+
+<section class="contact-hero">
+  <div class="contact-hero-content">
+    <h1>CONTACT US</h1>
+    <p>Need help choosing the right gear or interested in online boxing coaching? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<main class="contact-page">
+
+  <section class="contact-wrapper">
+
+<div class="contact-form">
+  <h2>Send Us A Message</h2>
+
+  <form action="https://formspree.io/f/xykrzqdj" method="POST">
+    <div class="contact-form-row">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name *"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email *"
+        required
+      >
+    </div>
+
+    <input
+      type="text"
+      name="subject"
+      placeholder="Subject"
+    >
+
+    <textarea
+      name="message"
+      placeholder="Your Message *"
+      required
+    ></textarea>
+	
+	<input
+  type="hidden"
+  name="_next"
+  value="http://localhost:3000/index.html">
+
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+</div>
+
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h3>Based In Adelaide</h3>
+          <p>Proudly based in Adelaide, South Australia.</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">✉</div>
+        <div>
+          <h3>Email Us</h3>
+          <p>elevateboxing@gmail.com</p>
+          <p>We aim to reply within 24 hours.</p>
+        </div>
+      </div>
+	  
+	  
+	  <div class="contact-item">
+
+			<div class="contact-icon follow-icon">
+				<span></span>
+			</div>
+
+			<div>
+				<h3>Follow Us</h3>
+
+				<div class="social-links">
+
+					<a href="https://instagram.com/fightforge" target="_blank">
+						<img src="images/instagram.png" alt="Instagram">
+						<span>@elevateboxingau</span>
+					</a>
+
+					<a href="https://tiktok.com/@fightforge" target="_blank">
+						<img src="images/tiktok.png" alt="TikTok">
+						<span>@elevateboxingau</span>
+					</a>
+
+				</div>
+			</div>
+
+		</div>
+    </div>
+
+  </section>
+
+  <section class="training-contact-strip">
+    <div>
+      <h2>Interested In Online Coaching?</h2>
+      <p>Enquire about 1-on-1 training, beginner programs and fitness conditioning.</p>
+    </div>
+
+    <a href="training.html" class="btn">Find out More</a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <h2>ELEVATE<span>BOXING</span></h2>
+    <p>Premium boxing gear for champions. Built to perform. Made to last.</p>
+  </div>
+
+  <div class="footer-links">
+    <h3>Shop</h3>
+    <a href="shop.html">Gloves</a>
+    <a href="shop.html">HeadGear</a>
+    <a href="shop.html">Footwear</a>
+    <a href="shop.html">Accessories</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Customer Care</h3>
+    <a href="contact.html">Contact Us</a>
+    <a href="#">Shipping Info</a>
+    <a href="#">Returns</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Company</h3>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+
+  <div class="footer-links">
+    <h3>Secure Payment</h3>
+    <p>Powered by Stripe</p>
+	<img src="images/stripelogo.png" alt="Stripe" width="100">
+  </div>
+</footer>
+
+<script src="js/cart-counter.js"></script>
+
+</body>
+</html>
