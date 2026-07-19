@@ -85,10 +85,17 @@
 
 
 <script>
-  localStorage.removeItem("cart");
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get("session_id");
 
-  if (typeof updateCartCount === "function") {
-    updateCartCount();
+  if (sessionId) {
+    localStorage.removeItem("cart");
+
+    if (typeof updateCartCount === "function") {
+      updateCartCount();
+    }
+  } else {
+    window.location.replace("cart.html");
   }
 </script>
 
