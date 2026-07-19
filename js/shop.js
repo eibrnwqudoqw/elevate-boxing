@@ -1,14 +1,36 @@
 let allProducts = {};
 
 fetch("data/products.json")
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Products request failed: ${response.status}`);
+    }
+
+    return response.json();
+  })
   .then(products => {
     allProducts = products;
     window.allProducts = products;
 
     displayProducts(allProducts);
     setupFilters();
+  })
+  .catch(error => {
+    console.error("Could not load products:", error);
+
+    const shopGrid = document.getElementById("shopGrid");
+
+    if (shopGrid) {
+      shopGrid.innerHTML = `
+        <p style="text-align:center;padding:40px;">
+          Products could not be loaded.<br>
+          Please refresh the page.
+        </p>
+      `;
+    }
   });
+
+function displayProducts(products) {
 
 function displayProducts(products) {
   const shopGrid = document.getElementById("shopGrid");
