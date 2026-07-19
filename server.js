@@ -12,7 +12,44 @@ if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error("STRIPE_SECRET_KEY is missing from the .env file.");
 }
 
+if (!process.env.STRIPE_WEBHOOK_SECRET) {
+  throw new Error("STRIPE_WEBHOOK_SECRET is missing from the environment variables.");
+}
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+app.post(
+  "/stripe-webhook",
+  express.raw({ type: "application/json" }),
+  (req, res) => {
+    const signature = req.headers["stripe-signature"];
+
+    let event;
+
+    try {
+      event = stripe.webhooks.constructEvent(
+        req.body,
+        signature,
+        process.env.STRIPE_WEBHOOK_SECRET
+      );
+    } catch (err) {
+      console.error(err.message);
+      return res.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+    if (event.type === "checkout.session.completed") {
+      const session = event.data.object;
+
+		console.log("Payment completed!");
+		console.log("Session ID:", session.id);
+		console.log("Customer email:", session.customer_details?.email);
+		console.log("Amount paid:", session.amount_total);
+		console.log("Payment status:", session.payment_status);
+    }
+
+    res.json({ received: true });
+  }
+);
 
 app.use(express.json());
 app.use(express.static("."));
