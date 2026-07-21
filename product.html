@@ -75,7 +75,12 @@
 
 
       <div class="size-options" id="sizeOptions"></div>
-
+		
+		<div class="product-colours">
+		  <p><strong>Colour</strong></p>
+		  <div class="colour-options" id="colourOptions"></div>
+		</div>
+		
       <div class="cart-row">
         <div class="quantity">
           <button id="decreaseQty">-</button>
@@ -155,12 +160,14 @@ let currentProduct = null;
 let currentProductId = null;
 let selectedQuantity = 1;
 let selectedSize = null;
+let selectedColour = null;
 let selectedImage = "images/gloves.png";
 
 const productImage = document.getElementById("productImage");
 const productThumbs = document.getElementById("productThumbs");
 const quantityValue = document.getElementById("quantityValue");
 const sizeOptions = document.getElementById("sizeOptions");
+const colourOptions = document.getElementById("colourOptions");
 
 fetch("data/products.json")
   .then(response => response.json())
@@ -203,6 +210,50 @@ images.forEach(image => {
 
     productThumbs.appendChild(thumb);
 });
+
+colourOptions.innerHTML = "";
+
+if (currentProduct.colours && currentProduct.colours.length > 0) {
+
+    currentProduct.colours.forEach((colour, index) => {
+
+        const button = document.createElement("button");
+
+        button.textContent = colour;
+
+        if (index === 0) {
+            button.classList.add("active");
+            selectedColour = colour;
+
+            productImage.src =
+                currentProduct.colour_images[colour];
+
+            selectedImage =
+                currentProduct.colour_images[colour];
+        }
+
+        button.addEventListener("click", () => {
+
+            document
+                .querySelectorAll("#colourOptions button")
+                .forEach(btn => btn.classList.remove("active"));
+
+            button.classList.add("active");
+
+            selectedColour = colour;
+
+            productImage.src =
+                currentProduct.colour_images[colour];
+
+            selectedImage =
+                currentProduct.colour_images[colour];
+        });
+
+        colourOptions.appendChild(button);
+
+    });
+
+}
 
     const descriptionList = document.getElementById("productDescription");
     const descriptionCopy = document.getElementById("descriptionCopy");
@@ -269,9 +320,17 @@ function addProductToCart(goToCheckout = false) {
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  const cartId = selectedSize
-    ? `${currentProductId}-${selectedSize}`
-    : currentProductId;
+	const optionParts = [currentProductId];
+
+	if (selectedSize) {
+	  optionParts.push(selectedSize);
+	}
+
+	if (selectedColour) {
+	  optionParts.push(selectedColour);
+	}
+
+	const cartId = optionParts.join("-");
 
   const existingItem = cart.find(item => item.id === cartId);
 
@@ -279,15 +338,19 @@ function addProductToCart(goToCheckout = false) {
     existingItem.quantity += selectedQuantity;
   } else {
     cart.push({
-      id: cartId,
-      productId: currentProductId,
-      title: selectedSize
-        ? `${currentProduct.title} - ${selectedSize}`
-        : currentProduct.title,
-      price: currentProduct.price,
-      image: selectedImage,
-      quantity: selectedQuantity
-    });
+  id: cartId,
+  productId: currentProductId,
+  title: [
+    currentProduct.title,
+    selectedSize,
+    selectedColour
+  ].filter(Boolean).join(" - "),
+  price: currentProduct.price,
+  image: selectedImage,
+  size: selectedSize,
+  colour: selectedColour,
+  quantity: selectedQuantity
+});
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
