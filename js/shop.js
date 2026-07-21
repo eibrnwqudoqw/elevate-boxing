@@ -30,6 +30,7 @@ fetch("data/products.json")
     }
   });
 
+function displayProducts(products) {
 
 function displayProducts(products) {
   const shopGrid = document.getElementById("shopGrid");
@@ -39,10 +40,7 @@ function displayProducts(products) {
   Object.keys(products).forEach(productId => {
     const product = products[productId];
 
-    const image =
-      product.image_urls && product.image_urls.length > 0
-        ? product.image_urls[0]
-        : "images/aquabag.jpg";
+	const image = `images/${productId}/1.png`;
 
     shopGrid.innerHTML += `
       <div class="shop-card" onclick="goToProduct('${productId}')">
@@ -143,10 +141,7 @@ function filterProducts() {
 function quickAddToCart(productId) {
   const product = allProducts[productId];
 
-  const image =
-    product.image_urls && product.image_urls.length > 0
-      ? product.image_urls[0]
-      : "images/aquabag.jpg";
+	const image = `images/${productId}/1.png`;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
