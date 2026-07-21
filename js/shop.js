@@ -110,7 +110,7 @@ function filterProducts() {
   Object.keys(allProducts).forEach(productId => {
     const product = allProducts[productId];
 
-    const productColors = product.colors || [];
+    const productColours = product.colours || [];
     const productSizes = product.sizes || [];
     const productPrice = Number(product.price.replace("$", ""));
 
@@ -118,9 +118,9 @@ function filterProducts() {
       selectedCategories.length === 0 ||
       selectedCategories.includes(product.category);
 
-    const colorMatch =
-      selectedColors.length === 0 ||
-      selectedColors.some(color => productColors.includes(color));
+	const colorMatch =
+	  selectedColors.length === 0 ||
+	  selectedColors.some(color => productColours.includes(color));
 
     const sizeMatch =
       selectedSizes.length === 0 ||
