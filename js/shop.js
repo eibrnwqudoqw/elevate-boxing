@@ -49,7 +49,6 @@ function displayProducts(products) {
 
         <p class="price">${product.price}</p>
 
-        <p>${product.category}</p>
 
         <div class="shop-card-actions">
           <span class="view-product">View Product →</span>
