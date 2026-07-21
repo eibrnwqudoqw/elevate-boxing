@@ -30,7 +30,6 @@ fetch("data/products.json")
     }
   });
 
-function displayProducts(products) {
 
 function displayProducts(products) {
   const shopGrid = document.getElementById("shopGrid");
