@@ -110,9 +110,15 @@ function filterProducts() {
   Object.keys(allProducts).forEach(productId => {
     const product = allProducts[productId];
 
-    const productColours = product.colours || [];
-    const productSizes = product.sizes || [];
-    const productPrice = Number(product.price.replace("$", ""));
+	const productColours = product.colours || [];
+
+	const productSizes = product.sizes && product.sizes.length > 0
+	  ? product.sizes
+	  : ["8oz", "10oz", "12oz", "14oz", "16oz"].filter(size =>
+		  product.title.toLowerCase().includes(size.toLowerCase())
+		);
+
+	const productPrice = Number(product.price.replace("$", ""));
 
     const categoryMatch =
       selectedCategories.length === 0 ||
