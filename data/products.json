@@ -233,8 +233,8 @@
 	"Blue": "images/gloves5/3.png",
 	"Red": "images/gloves5/4.png",
 	"Green": "images/gloves5/5.png",
-	"Yellow": "images/gloves5/5.png",
-	"Gold": "images/gloves5/5.png"
+	"Yellow": "images/gloves5/6.png",
+	"Gold": "images/gloves5/8.png"
   },
     "image_urls": [],
 	"description": [
@@ -283,16 +283,16 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-gloves/products/boxing-gloves-trophy-getters%C2%AE-12oz",
     "sizes": [],
-    "colours": ["Red","Blue","Black","Green","Purple","Pink","White","Gold"],
+    "colours": ["Red","Blue","Black","Green","Purple","Pink","White","Gold","Cyan"],
 	"colour_images": {
 		"Red": "images/gloves7/1.png",
 		"Blue": "images/gloves7/2.png",
 		"Black": "images/gloves7/3.png",
 		"Green": "images/gloves7/4.png",
 		"Purple": "images/gloves7/5.png",
-		"Pink": images/gloves7/8.png",
-		"White": images/gloves7/11.png",
-		"Gold": images/gloves7/16.png",
+		"Pink": "images/gloves7/8.png",
+		"White": "images/gloves7/11.png",
+		"Gold": "images/gloves7/16.png",
 		"Cyan": "images/gloves7/20.png"
   },
     "image_urls": [],
@@ -347,7 +347,7 @@
 	"colour_images": {
 		"Blue": "images/gloves9/1.png",
 		"Black": "images/gloves9/2.png",
-		"Red": images/gloves9/3.png
+		"Red": "images/gloves9/3.png"
   },
     "image_urls": [],
 	"description": [
@@ -400,8 +400,8 @@
 	"colour_images": {
 		"Black": "images/gloves11/1.png",
 		"Blue": "images/gloves11/2.png",
-		"Pink": images/gloves11/3.png,
-		"Red": images/gloves11/4.png
+		"Pink": "images/gloves11/3.png",
+		"Red": "images/gloves11/4.png"
   },
     "image_urls": [],
 	"description": [
