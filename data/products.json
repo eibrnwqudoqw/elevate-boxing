@@ -8,7 +8,7 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/h20-bags/products/copy-of-boxing-bag-h2o-20-60kg-filled",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black"],
     "image_urls": [],
     "description": [
       "Developed for Intermediate Boxers – Perfect for fighters leveling up their skills",
@@ -31,7 +31,7 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-bags/products/boxing-bag-h2o-18-50kg-filled",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black"],
     "image_urls": [],
     "description": [
   "The Water Filled Punching Bag is designed to deliver a realistic, heavy-bag training experience while remaining practical for both commercial gyms and home setups.",
@@ -52,7 +52,7 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-bags/products/boxing-bag-h2o-15-35kg-filled",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black"],
     "image_urls": [],
     "description": [
 	  "The Water Filled Punching Bag is designed to deliver a realistic, heavy-bag training experience while remaining practical for both commercial gyms and home setups.",
@@ -74,7 +74,7 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-bags/products/empty-trophy-getters-boxing-bag-5ft-casing",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black"],
     "image_urls": [],
 	"description": [
 	  "Built for serious boxing training, this heavy-duty refillable boxing bag delivers outstanding durability and long-term value for both home and commercial gyms.",
@@ -96,7 +96,7 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-bags/products/boxing-bag-empty-casing-trophy-getters%C2%AE-mil-spec%E2%84%A2-5ft-black",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black"],
     "image_urls": [],
 	"description": [
 	  "Built for serious boxing training, this heavy-duty refillable boxing bag delivers outstanding durability and long-term value for both home and commercial gyms.",
@@ -257,7 +257,11 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-gloves/products/trophy-getters-commercial-boxing-gloves",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black","Red"],
+	"colour_images": {
+    "Black": "images/gloves6/1.png",
+    "Red": "images/gloves6/2.png"
+  },
     "image_urls": [],
 	"description": [
 	  "The Trophy Getter® Boxing Gloves have earned their legendary reputation through more than 35 years of proven performance, making them a trusted choice for gyms, coaches, professional fighters and beginners alike.",
@@ -279,7 +283,18 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-gloves/products/boxing-gloves-trophy-getters%C2%AE-12oz",
     "sizes": [],
-    "colours": [],
+    "colours": ["Red","Blue","Black","Green","Purple","Pink","White","Gold"],
+	"colour_images": {
+		"Red": "images/gloves7/1.png",
+		"Blue": "images/gloves7/2.png",
+		"Black": "images/gloves7/3.png",
+		"Green": "images/gloves7/4.png",
+		"Purple": "images/gloves7/5.png",
+		"Pink": images/gloves7/8.png",
+		"White": images/gloves7/11.png",
+		"Gold": images/gloves7/16.png",
+		"Cyan": "images/gloves7/20.png"
+  },
     "image_urls": [],
 	"description": [
 	  "The Trophy Getter® Boxing Gloves have earned their legendary reputation through more than 35 years of proven performance, making them a trusted choice for gyms, coaches, professional fighters and beginners alike.",
@@ -303,7 +318,10 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-gloves/products/boxing-gloves-trophy-getters%C2%AE-8oz",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black"],
+		"colour_images": {
+		"Black": "images/gloves8/1.png"
+  },
     "image_urls": [],
 	"description": [
 	  "The Trophy Getter® Boxing Gloves have earned their legendary reputation through more than 35 years of proven performance, making them a trusted choice for gyms, coaches, professional fighters and beginners alike.",
@@ -325,7 +343,12 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/gloves/products/armadillo-safety-gloves",
     "sizes": [],
-    "colours": [],
+    "colours": ["Blue","Black","Red"],
+	"colour_images": {
+		"Blue": "images/gloves9/1.png",
+		"Black": "images/gloves9/2.png",
+		"Red": images/gloves9/3.png
+  },
     "image_urls": [],
 	"description": [
 	  "Built for professional boxing coaches and athletes, these precision focus pads are designed to develop faster hands, sharper accuracy and cleaner punching combinations.",
@@ -348,7 +371,10 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/gloves/products/boxing-gloves-armadillo-safety-12oz-black",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black"],
+	"colour_images": {
+		"Black": "images/gloves10/1.png"
+  },
     "image_urls": [],
 	"description": [
 	  "Built for professional boxing coaches and athletes, these precision focus pads are designed to develop faster hands, sharper accuracy and cleaner punching combinations.",
@@ -370,7 +396,13 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/boxing-gloves/products/boxing-gloves-trophy-getters%C2%AE-10oz",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black","Blue","Pink","Red"],
+	"colour_images": {
+		"Black": "images/gloves11/1.png",
+		"Blue": "images/gloves11/2.png",
+		"Pink": images/gloves11/3.png,
+		"Red": images/gloves11/4.png
+  },
     "image_urls": [],
 	"description": [
 	  "The Trophy Getter® Boxing Gloves have earned their legendary reputation through more than 35 years of proven performance, making them a trusted choice for gyms, coaches, professional fighters and beginners alike.",
@@ -393,7 +425,10 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/pads/products/focus-pads-mexican%E2%84%A2-fighting-pads-black",
     "sizes": [],
-    "colours": [],
+    "colours": ["Black"],
+	"colour_images": {
+		"Black": "images/pads1/1.png"
+  },
     "image_urls": [],
 "description": [
   "Engineered for maximum protection and confidence in the ring, these premium sparring gloves are designed for boxing, kickboxing and Muay Thai athletes who demand professional-level performance.",
@@ -417,7 +452,10 @@
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/products/mexican-fuerte-pocket-rocket-focus-pads?variant=46229583626536",
     "sizes": [],
-    "colours": [],
+	"colours": ["Black"],
+	"colour_images": {
+		"Black": "images/pads2/1.png"
+  },
     "image_urls": [],
 	"description": [
 	  "Built for professional boxing coaches and athletes, these precision focus pads are designed to develop faster hands, sharper accuracy and cleaner punching combinations.",
