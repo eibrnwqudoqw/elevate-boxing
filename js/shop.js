@@ -163,9 +163,19 @@ function quickAddToCart(productId) {
     });
   }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+	localStorage.setItem("cart", JSON.stringify(cart));
 
-  alert("Added to cart");
+	updateCartCount();
+
+	const toast = document.getElementById("cartToast");
+
+	toast.classList.add("show");
+
+	setTimeout(() => {
+		toast.classList.remove("show");
+	}, 3000);
+
+
 }
 
 function clearFilters() {
