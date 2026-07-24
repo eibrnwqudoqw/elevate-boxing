@@ -11,12 +11,12 @@
     "colours": ["Black"],
     "image_urls": [],
     "description": [
-      "Developed for Intermediate Boxers – Perfect for fighters leveling up their skills",
-      "Multi-Purpose Design – Ideal for all types of boxing training",
-      "Mesh Breather Pillow Palms – Enhanced ventilation keeps hands cooler and drier",
-      "Premium Leather Outer with Black Carbon Fibre Enduro Palm & Wrist",
-      "Turned-In, Padded Thumb Design – Adds extra protection",
-      "Relaxed Fit with Easy Hand Entry"
+	  "The Water Filled Punching Bag is designed to deliver a realistic, heavy-bag training experience while remaining practical for both commercial gyms and home setups.",
+	  "Simply fill the durable outer shell with water to create a stable, high-performance punching bag weighing over 50kg, then empty it whenever you need to transport or store it.",
+	  "Built with a commercial-grade 3.5mm wall membrane and a durable black finish.",
+	  "Heavy-duty chain and shackle included.",
+	  "Includes all accessories and tools required for setup.",
+	  "Available in three sizes."
     ]
   }
   ,
@@ -339,7 +339,7 @@
 	"price": "$159.99", 
     "stripePriceId": "price_1TwgzBDO9jnLKFBay8DBSkdt",
     "sku": "PBG6B16",
-    "category": "Pads",
+    "category": "Gloves",
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/gloves/products/armadillo-safety-gloves",
     "sizes": [],
@@ -367,7 +367,7 @@
 	"price": "$159.99", 
     "stripePriceId": "price_1TwgzoDO9jnLKFBawYUB2LBH",
     "sku": "PBG6B16",
-    "category": "Pads",
+    "category": "Gloves",
     "brand": "Punch Equipment",
     "url": "https://www.punchequipment.com/collections/gloves/products/boxing-gloves-armadillo-safety-12oz-black",
     "sizes": [],
