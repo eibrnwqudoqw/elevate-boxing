@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product | Elevate Boxing</title>
   <link rel="stylesheet" href="css/style.css"/>
-</head>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=HU2Uwlanx7V8y-xPKkxVT97nRTGJDnoHxHcPF_BwrkMrlMQl8ldwWNtTtPDkZimmppVHSId0ZUDWpywy7N9eyEDgKwx_JXOPimyoU6QOXKAMpN_yRZwLYUITuMtN5aPLp8GgRAXfBPFA1GJNLIC0EazmsUupQYsHRAivcNXZ9QISL-MwzwfReuOADbXrW_GUGTMBalMcFFNPM0s1roodYcg-L78FV57jDnHX03mc21E2SY6ZILc57HL10f2ttnWxFzQ5A6gkwCSdagaSHoGCxOgmRERIxpPB-GYjkcW5_I7_EShDzcOemxOltQNWeDsjQGzoptoGGX4qN_0KLQAqAg" charset="UTF-8"></script></head>
 
 <body>
 
@@ -63,10 +63,6 @@
       <h1 id="productTitle">Loading Product...</h1>
 
       <p class="price" id="productPrice">$0.00</p>
-
-      <p class="product-description" id="productSummary">
-		  Loading product information...
-	</p>
 
 
       <hr>
@@ -184,12 +180,6 @@ fetch("data/products.json")
     document.getElementById("productTitleCrumb").textContent = currentProduct.title;
     document.getElementById("productPrice").textContent = currentProduct.price;
 	
-	const productSummary = document.getElementById("productSummary");
-
-	if (currentProduct.description && currentProduct.description.length > 0) {
-		productSummary.innerHTML = currentProduct.description.join("<br>");
-	}
-	
     const images = [];
 
 for (let i = 1; i <= 10; i++) {
@@ -265,8 +255,6 @@ if (currentProduct.colours && currentProduct.colours.length > 0) {
 	descriptionCopy.innerHTML = "";
 
 	if (currentProduct.description && currentProduct.description.length > 0) {
-
-		productSummary.innerHTML = currentProduct.description.join("<br>");
 
 		descriptionCopy.innerHTML = currentProduct.description.join("<br>");
 	}
