@@ -101,7 +101,7 @@
 
     <div class="info-card">
       <h2>Description</h2>
-      <ul id="descriptionCopy"></ul>
+      <<div id="descriptionCopy" class="product-description"></div>
     </div>
 
     <div class="info-card">
@@ -261,23 +261,24 @@ if (currentProduct.colours && currentProduct.colours.length > 0) {
 
 }
 
-    const descriptionList = document.getElementById("productDescription");
-    const descriptionCopy = document.getElementById("descriptionCopy");
+	const descriptionList = document.getElementById("productDescription");
+	const descriptionCopy = document.getElementById("descriptionCopy");
 
-    descriptionList.innerHTML = "";
-    descriptionCopy.innerHTML = "";
+	descriptionList.innerHTML = "";
+	descriptionCopy.innerHTML = "";
 
-    if (currentProduct.description && currentProduct.description.length > 0) {
-      currentProduct.description.forEach(item => {
-        const liOne = document.createElement("li");
-        liOne.textContent = item;
-        descriptionList.appendChild(liOne);
+	if (currentProduct.description && currentProduct.description.length > 0) {
 
-        const liTwo = document.createElement("li");
-        liTwo.textContent = item;
-        descriptionCopy.appendChild(liTwo);
-      });
-    }
+		productSummary.innerHTML = currentProduct.description.join("<br>");
+
+		descriptionCopy.innerHTML = currentProduct.description.join("<br>");
+
+		currentProduct.description.forEach(item => {
+			const li = document.createElement("li");
+			li.textContent = item;
+			descriptionList.appendChild(li);
+		});
+	}
 
     sizeOptions.innerHTML = "";
 
