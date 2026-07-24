@@ -64,9 +64,9 @@
 
       <p class="price" id="productPrice">$0.00</p>
 
-      <p class="product-description">
-        Premium boxing equipment built for training, performance and durability.
-      </p>
+      <p class="product-description" id="productSummary">
+		  Loading product information...
+	</p>
 
       <ul class="features" id="productDescription"></ul>
 
@@ -184,7 +184,13 @@ fetch("data/products.json")
     document.getElementById("productTitle").textContent = currentProduct.title;
     document.getElementById("productTitleCrumb").textContent = currentProduct.title;
     document.getElementById("productPrice").textContent = currentProduct.price;
+	
+	const productSummary = document.getElementById("productSummary");
 
+	if (currentProduct.description && currentProduct.description.length > 0) {
+		productSummary.textContent = currentProduct.description[0];
+	}
+	
     const images = [];
 
 for (let i = 1; i <= 10; i++) {
