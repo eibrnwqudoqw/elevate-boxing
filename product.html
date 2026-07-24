@@ -188,7 +188,7 @@ fetch("data/products.json")
 	const productSummary = document.getElementById("productSummary");
 
 	if (currentProduct.description && currentProduct.description.length > 0) {
-		productSummary.textContent = currentProduct.description[0];
+		productSummary.innerHTML = currentProduct.description.join("<br><br>");
 	}
 	
     const images = [];
