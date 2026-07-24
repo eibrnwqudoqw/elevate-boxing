@@ -226,15 +226,18 @@ if (currentProduct.colours && currentProduct.colours.length > 0) {
 
         button.textContent = colour;
 
+        const colourImage =
+            currentProduct.colour_images &&
+            currentProduct.colour_images[colour]
+                ? currentProduct.colour_images[colour]
+                : selectedImage;
+
         if (index === 0) {
             button.classList.add("active");
             selectedColour = colour;
 
-            productImage.src =
-                currentProduct.colour_images[colour];
-
-            selectedImage =
-                currentProduct.colour_images[colour];
+            productImage.src = colourImage;
+            selectedImage = colourImage;
         }
 
         button.addEventListener("click", () => {
@@ -247,11 +250,8 @@ if (currentProduct.colours && currentProduct.colours.length > 0) {
 
             selectedColour = colour;
 
-            productImage.src =
-                currentProduct.colour_images[colour];
-
-            selectedImage =
-                currentProduct.colour_images[colour];
+            productImage.src = colourImage;
+            selectedImage = colourImage;
         });
 
         colourOptions.appendChild(button);
