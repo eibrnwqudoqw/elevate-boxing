@@ -68,7 +68,6 @@
 		  Loading product information...
 	</p>
 
-      <ul class="features" id="productDescription"></ul>
 
       <hr>
 
@@ -261,10 +260,8 @@ if (currentProduct.colours && currentProduct.colours.length > 0) {
 
 }
 
-	const descriptionList = document.getElementById("productDescription");
 	const descriptionCopy = document.getElementById("descriptionCopy");
 
-	descriptionList.innerHTML = "";
 	descriptionCopy.innerHTML = "";
 
 	if (currentProduct.description && currentProduct.description.length > 0) {
@@ -272,12 +269,6 @@ if (currentProduct.colours && currentProduct.colours.length > 0) {
 		productSummary.innerHTML = currentProduct.description.join("<br>");
 
 		descriptionCopy.innerHTML = currentProduct.description.join("<br>");
-
-		currentProduct.description.forEach(item => {
-			const li = document.createElement("li");
-			li.textContent = item;
-			descriptionList.appendChild(li);
-		});
 	}
 
     sizeOptions.innerHTML = "";
