@@ -25,7 +25,7 @@
   "bag2": {
     "title": "BOXING BAG - H2O - 18 INCH - 50KG FILLED",
 	"price": "$289.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgkfDO9jnLKFBagfNxMCKr",
     "sku": "PBBWATER18",
     "category": "Bags",
     "brand": "Punch Equipment",
@@ -46,7 +46,7 @@
     "bag3": {
     "title": "BOXING BAG - H2O - 15 INCH - 35KG FILLED",
 	"price": "$229.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwglTDO9jnLKFBauux5jLxG",
     "sku": "PBBWATER18",
     "category": "Bags",
     "brand": "Punch Equipment",
@@ -68,7 +68,7 @@
       "bag4": {
     "title": "BOXING BAG - EMPTY CASING - Trophy Getters - 5ft - BLK",
 	"price": "$209.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgmkDO9jnLKFBaCaNRc85r",
     "sku": "PBBWATER18",
     "category": "Bags",
     "brand": "Punch Equipment",
@@ -90,7 +90,7 @@
         "bag5": {
     "title": "BOXING BAG - EMPTY CASING Trophy Getters MIL SPEC - 5FT - BLACK",
 	"price": "$219.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgogDO9jnLKFBaL2QHmcWP",
     "sku": "PBBEMPTYMSB03",
     "category": "Bags",
     "brand": "Punch Equipment",
@@ -112,7 +112,7 @@
           "bag6": {
     "title": "BOXING BAG - Black Diamond - TEAR DROP - 4FT - EMPTY",
 	"price": "$349.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgqEDO9jnLKFBaePiLswpS",
     "sku": "PTB359E",
     "category": "Bags",
     "brand": "Punch Equipment",
@@ -135,7 +135,7 @@
       "gloves1": {
     "title": "BOXING GLOVES - Mexican ELITE - 16oz - YELLOW",
 	"price": "$259.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgrBDO9jnLKFBaxbfJNX7n",
     "sku": "PBG9EMEXY16",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -156,7 +156,7 @@
         "gloves2": {
     "title": "BOXING GLOVES - Mexican ELITE - 16oz - MATT RED",
 	"price": "$259.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgsCDO9jnLKFBaksVuJ85n",
     "sku": "PBG9EMEXMR16",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -177,7 +177,7 @@
           "gloves3": {
     "title": "BOXING GLOVES - Mexican ELITE - 16oz - BLUE",
 	"price": "$259.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgstDO9jnLKFBaZNTyRllm",
     "sku": "PBG9EMEXMR16",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -198,7 +198,7 @@
             "gloves4": {
     "title": "BOXING GLOVES - Mexican ELITE - 16oz - MATT BLACK",
 	"price": "$259.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgtWDO9jnLKFBagf5a8hCj",
     "sku": "PBG9EMEXMB12",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -220,7 +220,7 @@
               "gloves5": {
     "title": "BOXING GLOVES - Trophy Getters - 16oz",
 	"price": "$139.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1Twgu5DO9jnLKFBavJ3VevPB",
     "sku": "PBG5GB16",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -250,8 +250,8 @@
   
                 "gloves6": {
     "title": "BOXING GLOVES - Trophy Getters - 14oz",
-	"price": "$129.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+	"price": "$139.99", 
+    "stripePriceId": "price_1Twgw8DO9jnLKFBadKG5PEz3",
     "sku": "PBG5GB16",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -277,7 +277,7 @@
                   "gloves7": {
     "title": "BOXING GLOVES - Trophy Getters - 12oz",
 	"price": "$139.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1Twgx4DO9jnLKFBaXT3aDqHX",
     "sku": "PBG5BW12",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -312,7 +312,7 @@
                       "gloves8": {
     "title": "BOXING GLOVES - Trophy Getters - 8oz",
 	"price": "$139.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgyHDO9jnLKFBat29Ncawd",
     "sku": "PBG5BW8 ",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -337,7 +337,7 @@
 	  "gloves9": {
     "title": "BOXING GLOVES - Armadillo SAFETY - 16oz",
 	"price": "$159.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgzBDO9jnLKFBay8DBSkdt",
     "sku": "PBG6B16",
     "category": "Pads",
     "brand": "Punch Equipment",
@@ -365,7 +365,7 @@
   	  "gloves10": {
     "title": "BOXING GLOVES - Armadillo SAFETY - 12oz - BLACK",
 	"price": "$159.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1TwgzoDO9jnLKFBawYUB2LBH",
     "sku": "PBG6B16",
     "category": "Pads",
     "brand": "Punch Equipment",
@@ -390,7 +390,7 @@
                       "gloves11": {
     "title": "BOXING GLOVES - Trophy Getters - 10oz",
 	"price": "$139.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1Twh0jDO9jnLKFBaND3XU80q",
     "sku": "PBG5BW10",
     "category": "Gloves",
     "brand": "Punch Equipment",
@@ -419,7 +419,7 @@
                 "pads1": {
     "title": "FOCUS PADS - Mexican™ ULTRA AIR - BLACK",
 	"price": "$185.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1Twh1SDO9jnLKFBaWC6YTlTP",
     "sku": "PFPMEXULTRAB",
     "category": "Pads",
     "brand": "Punch Equipment",
@@ -446,7 +446,7 @@
                 "pads2": {
     "title": "FOCUS PADS - Mexican™ POCKET ROCKET - BLACK",
 	"price": "$109.99", 
-    "stripePriceId": "price_1TsfRXDO9jnLKFBadJbbjxU7",
+    "stripePriceId": "price_1Twh20DO9jnLKFBaltXNYMiM",
     "sku": "PFP284MEXBOSO",
     "category": "Pads",
     "brand": "Punch Equipment",
