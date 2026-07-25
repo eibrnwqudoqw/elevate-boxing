@@ -88,6 +88,21 @@ function setupFilters() {
   document
     .getElementById("clearFiltersBtn")
     .addEventListener("click", clearFilters);
+	
+		// Apply category from URL
+	const params = new URLSearchParams(window.location.search);
+	const category = params.get("category");
+
+	if (category) {
+	  const checkbox = document.querySelector(
+		`.category-filter[value="${category}"]`
+	  );
+
+	  if (checkbox) {
+		checkbox.checked = true;
+		filterProducts();
+	  }
+	}
 }
 
 function filterProducts() {
