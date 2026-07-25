@@ -28,11 +28,16 @@ if (!process.env.ORDER_EMAIL_APP_PASSWORD) {
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const emailTransporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.ORDER_EMAIL,
     pass: process.env.ORDER_EMAIL_APP_PASSWORD
-  }
+  },
+  connectionTimeout: 20000,
+  greetingTimeout: 20000,
+  socketTimeout: 30000
 });
 
 app.post(
