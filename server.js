@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const Stripe = require("stripe");
+const nodemailer = require("nodemailer");
 const products = require("./data/products.json");
 
 const app = express();
@@ -16,12 +17,28 @@ if (!process.env.STRIPE_WEBHOOK_SECRET) {
   throw new Error("STRIPE_WEBHOOK_SECRET is missing from the environment variables.");
 }
 
+if (!process.env.ORDER_EMAIL) {
+  throw new Error("ORDER_EMAIL is missing from the environment variables.");
+}
+
+if (!process.env.ORDER_EMAIL_APP_PASSWORD) {
+  throw new Error("ORDER_EMAIL_APP_PASSWORD is missing from the environment variables.");
+}
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+const emailTransporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.ORDER_EMAIL,
+    pass: process.env.ORDER_EMAIL_APP_PASSWORD
+  }
+});
 
 app.post(
   "/stripe-webhook",
   express.raw({ type: "application/json" }),
-  (req, res) => {
+  async (req, res) => {
     const signature = req.headers["stripe-signature"];
 
     let event;
@@ -38,14 +55,53 @@ app.post(
     }
 
     if (event.type === "checkout.session.completed") {
-      const session = event.data.object;
+	  const session = event.data.object;
 
-		console.log("Payment completed!");
-		console.log("Session ID:", session.id);
-		console.log("Customer email:", session.customer_details?.email);
-		console.log("Amount paid:", session.amount_total);
-		console.log("Payment status:", session.payment_status);
-    }
+	  const productsOrdered = Object.values(
+		session.metadata || {}
+	  ).join("\n");
+
+	  const amountPaid =
+		typeof session.amount_total === "number"
+		  ? `$${(session.amount_total / 100).toFixed(2)} AUD`
+		  : "Unknown";
+
+	  console.log("Payment completed!");
+	  console.log("Ordered products:", productsOrdered);
+
+	  try {
+		await emailTransporter.sendMail({
+		  from: process.env.ORDER_EMAIL,
+		  to: process.env.ORDER_EMAIL,
+		  subject: `New Elevate Boxing order - ${amountPaid}`,
+		  text: `
+	New paid order received.
+
+	Customer name:
+	${session.customer_details?.name || "Not provided"}
+
+	Customer email:
+	${session.customer_details?.email || "Not provided"}
+
+	Customer phone:
+	${session.customer_details?.phone || "Not provided"}
+
+	Amount paid:
+	${amountPaid}
+
+	Products:
+	${productsOrdered || "No product information received"}
+
+	Stripe session:
+	${session.id}
+		  `.trim()
+		});
+
+		console.log("Order email sent.");
+	  } catch (error) {
+		console.error("Order email failed:", error.message);
+	  }
+	}
 
     res.json({ received: true });
   }
@@ -64,57 +120,75 @@ app.post("/create-checkout-session", async (req, res) => {
       });
     }
 
-    const lineItems = cart.map((item) => {
-      /*
-       * Product-page cart items contain productId.
-       * Quick-add items may currently contain only id.
-       */
-      let productId = item.productId || item.id;
+    const orderMetadata = {};
 
-      /*
-       * A sized item may have an ID such as:
-       * gloves1-16oz
-       *
-       * productId should normally prevent this being needed,
-       * but this provides a fallback.
-       */
-      if (!products[productId] && typeof productId === "string") {
-        productId = Object.keys(products).find(
-          (id) => productId === id || productId.startsWith(`${id}-`)
-        );
-      }
+	const lineItems = cart.map((item, index) => {
+	  let productId = item.productId || item.id;
 
-      const product = products[productId];
+	  // Fallback for cart IDs containing size or colour
+	  if (!products[productId] && typeof productId === "string") {
+		productId = Object.keys(products).find(
+		  id => productId === id || productId.startsWith(`${id}-`)
+		);
+	  }
 
-      if (!product) {
-        throw new Error(`Product not found: ${item.productId || item.id}`);
-      }
+	  const product = products[productId];
 
-      if (
-        !product.stripePriceId ||
-        !product.stripePriceId.startsWith("price_")
-      ) {
-        throw new Error(
-          `A valid Stripe Price ID is missing for product: ${productId}`
-        );
-      }
+	  if (!product) {
+		throw new Error(`Product not found: ${item.productId || item.id}`);
+	  }
 
-      const quantity = Number(item.quantity);
+	  if (
+		!product.stripePriceId ||
+		!product.stripePriceId.startsWith("price_")
+	  ) {
+		throw new Error(
+		  `A valid Stripe Price ID is missing for product: ${productId}`
+		);
+	  }
 
-      if (!Number.isInteger(quantity) || quantity < 1 || quantity > 20) {
-        throw new Error(`Invalid quantity for product: ${productId}`);
-      }
+	  const quantity = Number(item.quantity);
 
-      return {
-        price: product.stripePriceId,
-        quantity
-      };
-    });
+	  if (!Number.isInteger(quantity) || quantity < 1 || quantity > 20) {
+		throw new Error(`Invalid quantity for product: ${productId}`);
+	  }
+
+	  // Only accept colours that actually belong to this product
+	  const colour =
+		item.colour &&
+		Array.isArray(product.colours) &&
+		product.colours.includes(item.colour)
+		  ? item.colour
+		  : "Not selected";
+
+	  // Only accept sizes that actually belong to this product
+	  const size =
+		item.size &&
+		Array.isArray(product.sizes) &&
+		product.sizes.includes(item.size)
+		  ? item.size
+		  : "Not selected";
+
+	  // Save each ordered item in Stripe metadata
+	  orderMetadata[`item_${index + 1}`] =
+		`${product.title} | Size: ${size} | Colour: ${colour} | Qty: ${quantity}`;
+
+	  return {
+		price: product.stripePriceId,
+		quantity
+	  };
+	});
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
 
       line_items: lineItems,
+	  
+	  metadata: orderMetadata,
+
+		payment_intent_data: {
+		  metadata: orderMetadata
+		},
 
       customer_creation: "always",
 
